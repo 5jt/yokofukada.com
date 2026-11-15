@@ -18,8 +18,12 @@ Agenda for yokofukada.com. See `README.md` for the goal and stages.
 
 ## Stage 3: Deploy to `lambent.net`
 
-- [ ] Publish a staging URL on `lambent.net` for Yoko to review before the DNS switch (show, don't tell)
-- [ ] HTTPS (Jack runs server commands on `lambent-static`)
+Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds the site and copies it to the droplet with `rsync`. Drafts are staged in the `wireframe` folder of `lambenttechnology.com` on the droplet.
+
+- [ ] Generator writes relative links only, so the same build works under `wireframe/` and at the domain root
+- [ ] Publish script in `lib/`: build, then `rsync` to either staging (`wireframe`) or production
+- [ ] Confirm the server paths and the SSH user the script will use (Stephen runs it; Claude can't reach the server)
+- [ ] Production site configuration and HTTPS for `yokofukada.com` (Jack, once)
 
 ## Stage 4: Revise with Yoko
 
