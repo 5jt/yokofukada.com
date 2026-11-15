@@ -26,9 +26,9 @@ esac
 # --delete keeps the destination an exact copy of html/. The destination is
 # this site's own folder, never the shared wireframes/ folder itself.
 if [ -n "$go" ]; then
-  rsync -rlvz --delete --chmod=D755,F644 --exclude='.*' html/ "$host:$dest"
+  rsync -rltvz --delete --exclude='.*' html/ "$host:$dest"
   echo "Published to $target."
 else
-  rsync -rlvzn --delete --chmod=D755,F644 --exclude='.*' html/ "$host:$dest"
+  rsync -rltvzn --delete --exclude='.*' html/ "$host:$dest"
   echo "Dry run only. Run '$0 --go $target' to publish."
 fi
