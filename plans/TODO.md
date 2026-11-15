@@ -32,7 +32,7 @@ Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko
 - [ ] Get Miki's and Yoko's approval of the shortened introduction (`plans/catalog-introduction.md`)
 - [x] Page named Tapestries / タペストリー; new biography moved to about me
 - [ ] Spelling: British throughout? ("jewelry" in the new biography vs "jewellery" elsewhere); home page still says "temporarily based in Sydney"
-- [ ] Contact: Yoko wants to show recent work to friends; a stranger should also be able to get in touch. A form is acceptable if it acknowledges a message immediately. Choose how to handle it.
+Decided (2026-11-15): contact is by `yoko@yokofukada.com`, shown in plain text on every page and as a mailto button on Tapestries; no form, no obfuscation (20 years of exposure have caused no trouble).
 
 Decided (2026-11-15): Miki's full-resolution originals (`src/art/`) go in the public repo.
 
@@ -62,15 +62,15 @@ Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share t
 
 - [ ] Share the Dropbox folder `Yoko site` with Miki (Stephen, in Dropbox)
 - [ ] Tell Miki about the new arrangement
+- [ ] Questions for Miki are in `Yoko site/for Miki/Questions for Miki 2026-11-15.md` (Tapestries titles, credit, introduction, spelling, typos, copyright line); fold her answers into the items above
 - [ ] Later: let Miki replace images and edit Markdown pages herself (e.g. GitHub's web editor on a branch, or a sync from her Dropbox folder)
 - [ ] Put the `webhands/` planning files (`plans/`, `progress/`, `CLAUDE.md`) under version control too?
 - [ ] Once the local copy has been in use for a while, archive or delete the copy on the share
 
 ## Open questions
 
-- [ ] Ask Yoko whether to keep `yoko@yokofukada.com` on the site and, if not, what to use for contact
 - [ ] Content fixes awaiting approval: typos (see `plans/inventory.md`), the "© yoko fukada -2008" line
 
 - [ ] Which extra pages does Yoko want, and with what content? (Not yet known.)
 - [ ] Do higher-resolution originals of the images exist? If not, use what we recover from the old site.
-- [ ] Does Yoko use `yoko@yokofukada.com`? This decides whether the Fasthosts hosting package can be removed.
+- [ ] `yoko@yokofukada.com` stays in use (decided 2026-11-15). Is the mailbox part of the Fasthosts hosting package? If so, the package stays, or the mailbox moves elsewhere before it is cancelled.
