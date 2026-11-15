@@ -38,10 +38,11 @@ Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko
 
 ## Stage 3: Deploy to `lambent.net`
 
-Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds the site and copies it to the droplet with `rsync`. Drafts are staged under `/var/www/lambenttechnology.com/wireframes/` on the droplet (proposed: `wireframes/yokofukada/`). No password protection. Stephen has SSH access and runs the script.
+Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds the site and copies it to the droplet with `rsync`. Drafts are staged under `/var/www/lambenttechnology.com/wireframes/` on the droplet (`wireframes/yokofukada/`). No password protection. Stephen has SSH access and runs the script.
 
-- [ ] Generator writes relative links only, so the same build works under `wireframe/` and at the domain root
-- [ ] Publish script in `lib/`: build, then `rsync` to either staging (`wireframe`) or production
+- [x] Generator writes relative links only, so the same build works under `wireframes/yokofukada/` and at the domain root
+- [x] Publish script `lib/publish` (dry run by default; `--go` to publish; logs in as `stephen@lambent.net`; staging only so far)
+- [x] First publish to staging (2026-11-15): https://lambenttechnology.com/wireframes/yokofukada/
 - [ ] Confirm the production path for `yokofukada.com`
 - [ ] Production site configuration and HTTPS for `yokofukada.com` (Jack, once)
 
