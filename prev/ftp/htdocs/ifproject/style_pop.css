@@ -1,0 +1,49 @@
+/* 
+ *	Styles for www.yokofukada.com 
+ *	Stephen Taylor ・sjt@lambenttechnology.com
+ */
+
+body {
+        margin:10px;
+	text-align:center;	
+	color: #555;
+}
+
+.ja{
+	font-family: "ＭＳ Ｐゴシック",Osaka,sans-serif;
+	font-size: x-small;
+	line-height:180%;
+}	
+
+.en{
+    	font-family:Times;
+	font-size: small;
+	line-height:180%;
+}
+
+/* 標準のリンク */
+A:link {
+  color: black; /* リンクの色 */
+  text-decoration: none; /* 文字装飾 */
+}
+/* 訪問済みリンク */
+A:visited {   color: black; /* リンクの色 */
+  text-decoration: none; /* 文字装飾 */
+}
+/* 現在開いているリンク */
+A:active {   color: black; /* リンクの色 */
+  text-decoration: none; /* 文字装飾 */
+}
+/* マウスカーソルが上に来た時のリンク */
+A:hover {
+  color: black; /* リンクの色 */
+  text-decoration: underline; /* 文字装飾 */
+}
+
+.just{	text-align:justify}
+.right{	text-align:right}
+.left{	text-align:left}
+.middle{vertical-align:middle}
+.bottom{vertical-align:bottom}
+.vtop{vertical-align:top;
+text-align:left}
