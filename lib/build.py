@@ -150,7 +150,8 @@ def build(out):
     # removed: on the network share a removed directory can linger,
     # unreadable, until every handle on it is closed.
     for f in out.rglob("*"):
-        if f.is_file() and f not in written and not f.name.startswith("."):
+        if (f.is_file() and f not in written and not f.name.startswith(".")
+                and f.name != "version.txt"):   # written by lib/publish
             f.unlink()
             print(f"  removed {f.relative_to(out)}")
 

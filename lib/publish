@@ -4,6 +4,13 @@
 # Usage: lib/publish [--go] [staging|production]
 #
 # Without --go, rsync only shows what it would change (a dry run).
+# With --go, the working tree must be clean (everything committed), so the
+# server always matches a known commit.
+#
+# Every build carries version.txt (commit, branch, date) to the server,
+# e.g. https://lambenttechnology.com/wireframes/yokofukada/version.txt
+# A production publish also tags the commit published-YYYY-MM-DD.
+#
 # Set PUBLISH_HOST to the SSH login for the droplet (default: stephen@lambent.net).
 # staging (the default) publishes to
 #   https://lambenttechnology.com/wireframes/yokofukada/
@@ -22,14 +29,44 @@ case $target in
   *)          echo "usage: $0 [--go] [staging|production]" >&2; exit 2 ;;
 esac
 
+# Uncommitted changes, including new files not yet added (ignored files,
+# such as html/ and .venv/, don't count).
+dirty=$(git status --porcelain)
+if [ -n "$go" ] && [ -n "$dirty" ]; then
+  echo "Not publishing: there are uncommitted changes." >&2
+  echo "Commit them first, so the server matches a known commit:" >&2
+  echo "$dirty" >&2
+  exit 1
+fi
+
 .venv/bin/python lib/build.py
+
+commit=$(git rev-parse --short HEAD)
+[ -n "$dirty" ] && commit="$commit (plus uncommitted changes)"
+{
+  echo "commit: $commit"
+  echo "branch: $(git branch --show-current)"
+  echo "built:  $(date '+%Y-%m-%d %H:%M %Z')"
+  echo "target: $target"
+} > html/version.txt
 
 # --delete keeps the destination an exact copy of html/. The destination is
 # this site's own folder, never the shared wireframes/ folder itself.
-if [ -n "$go" ]; then
-  rsync -rltvz --delete --exclude='.*' html/ "$host:$dest"
-  echo "Published to $target."
-else
+if [ -z "$go" ]; then
   rsync -rltvzn --delete --exclude='.*' html/ "$host:$dest"
   echo "Dry run only. Run '$0 --go $target' to publish."
+  exit 0
+fi
+
+rsync -rltvz --delete --exclude='.*' html/ "$host:$dest"
+echo "Published $commit to $target."
+
+if [ "$target" = production ]; then
+  tag=published-$(date +%Y-%m-%d)
+  n=1
+  while git rev-parse -q --verify "refs/tags/$tag" >/dev/null; do
+    n=$((n + 1)); tag=published-$(date +%Y-%m-%d)-$n
+  done
+  git tag -a "$tag" -m "Published to production"
+  echo "Tagged $tag. Push it with: git push origin $tag"
 fi

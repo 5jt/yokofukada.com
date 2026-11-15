@@ -57,7 +57,7 @@ Project structure
 Building and publishing
 -----------------------
 
-One-time setup:
+One-time setup (Python version in `.python-version`; dependencies pinned in `requirements.txt`):
 
 	python3 -m venv .venv
 	.venv/bin/pip install -r requirements.txt
@@ -67,7 +67,7 @@ Content lives in `src/`: `site.yaml` (navigation), `works.yaml`, `jewellery.yaml
 	.venv/bin/python lib/prepare_images.py  # make web copies of new originals in src/art/
 	.venv/bin/python lib/build.py        # build into html/
 	lib/publish                          # build, then show what rsync would change
-	lib/publish --go                     # build and publish to staging
+	lib/publish --go                     # build and publish to staging (needs a clean working tree)
 	lib/shot URL out.png [WIDTH HEIGHT]  # screenshot a page with headless Firefox
 
 Staging: https://lambenttechnology.com/wireframes/yokofukada/
