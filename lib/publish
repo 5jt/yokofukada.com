@@ -1,0 +1,34 @@
+#!/bin/sh
+# Build the site and copy it to the droplet.
+#
+# Usage: lib/publish [--go] [staging|production]
+#
+# Without --go, rsync only shows what it would change (a dry run).
+# staging (the default) publishes to
+#   https://lambenttechnology.com/wireframes/yokofukada/
+set -eu
+
+cd "$(dirname "$0")/.."
+
+go=
+if [ "${1:-}" = "--go" ]; then go=1; shift; fi
+target=${1:-staging}
+
+host=lambent.net
+case $target in
+  staging)    dest=/var/www/lambenttechnology.com/wireframes/yokofukada/ ;;
+  production) echo "production path not yet set up" >&2; exit 1 ;;
+  *)          echo "usage: $0 [--go] [staging|production]" >&2; exit 2 ;;
+esac
+
+.venv/bin/python lib/build.py
+
+# --delete keeps the destination an exact copy of html/. The destination is
+# this site's own folder, never the shared wireframes/ folder itself.
+if [ -n "$go" ]; then
+  rsync -rlvz --delete --chmod=D755,F644 --exclude='.*' html/ "$host:$dest"
+  echo "Published to $target."
+else
+  rsync -rlvzn --delete --chmod=D755,F644 --exclude='.*' html/ "$host:$dest"
+  echo "Dry run only. Run '$0 --go $target' to publish."
+fi

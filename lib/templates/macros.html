@@ -1,0 +1,15 @@
+{% macro figure(img, cls="") %}
+<figure{% if cls %} class="{{ cls }}"{% endif %}>
+  <img src="images/{{ img.file }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ img.en }}">
+  <figcaption>{{ img.en }}{% if img.ja is defined %}<br><span lang="ja">{{ img.ja }}</span>{% endif %}</figcaption>
+</figure>
+{% endmacro %}
+
+{% macro collage_nav(collage, current="", cls="") %}
+<nav class="collage {{ cls }}" aria-label="works">
+  <img src="images/{{ collage.file }}" width="{{ collage.width }}" height="{{ collage.height }}" alt="">
+  {% for l in collage.links %}
+  <a href="{{ l.page }}.html" style="{{ l.style }}" title="{{ l.title }}"{% if l.page == current %} aria-current="page"{% endif %}><span>{{ l.title }}</span></a>
+  {% endfor %}
+</nav>
+{% endmacro %}

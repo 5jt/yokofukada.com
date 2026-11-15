@@ -1,0 +1,16 @@
+# Site-wide settings and navigation.
+# To add a page: put a Markdown file in src/pages/ and add a line to `nav`.
+
+name: Yoko Fukada
+email: yoko@yokofukada.com
+copyright: © yoko fukada -2008
+keywords: art, australia, australian, cross bay gallery, exhibition, fukada, sydney
+
+# Each entry: page (output file name without .html), English label, Japanese label.
+# `section` marks pages that light up this entry too (e.g. the individual works pages).
+nav:
+  - {page: index,     en: home,      ja: ホーム}
+  - {page: works,     en: works,     ja: アート作品, section: work}
+  - {page: jewellery, en: jewellery, ja: ジュエリー}
+  - {page: aboutme,   en: about me,  ja: プロフィール}
+  - {page: tapestries, en: tapestries, ja: タペストリー}

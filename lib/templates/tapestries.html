@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% macro picture(img, cls) %}
+{% if img.file is defined and img.file %}
+<img class="{{ cls }}" src="images/{{ img.file }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ img.alt | default(img.title) }}" loading="lazy">
+{% else %}
+<div class="{{ cls }} placeholder" role="img" aria-label="{{ img.alt | default(img.title) }}"><span>photograph to come</span></div>
+{% endif %}
+{% endmacro %}
+{% block main %}
+<div class="tapestries">
+<header class="t-head">
+  <h1>{{ spec.title }}</h1>
+  <div class="covers">
+  {% for c in covers %}{{ picture(c, "cover") }}{% endfor %}
+  </div>
+  <p><a class="button" href="mailto:{{ site.email }}">{{ spec.contact }}</a></p>
+</header>
+{% for s in sections %}
+<section class="t-section{% if s.text is defined %} with-text{% endif %}">
+  <div class="t-side">
+    <h2>{{ s.heading }}</h2>
+    {% if s.cover is defined %}{{ picture(covers[s.cover], "cover small") }}{% endif %}
+    {% if s.text is defined %}<div class="text">{{ s.text | safe }}</div>{% endif %}
+  </div>
+  <ol class="pieces">
+  {% for p in s.pieces %}
+    <li class="{{ p.shape }}">
+      {{ picture(p, "piece") }}
+      <p class="caption"><span class="num">{{ "%02d" | format(p.number) }}</span> {{ p.title }}{% if p.note is defined %}<br>{{ p.note }}{% endif %}</p>
+    </li>
+  {% endfor %}
+  </ol>
+</section>
+{% endfor %}
+</div>
+{% endblock %}

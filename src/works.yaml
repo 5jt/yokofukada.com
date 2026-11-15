@@ -1,0 +1,62 @@
+# The works: one page each (works01.html …), plus the collage on works.html.
+#
+# collage: the image used as the works menu, and for each work the rectangle
+#   [left, top, right, bottom] in pixels of that image that links to it.
+# images: each with an English caption and an optional Japanese one.
+# credit: optional photographer credit.
+
+collage: works_big.jpg
+
+works:
+  - page: works01
+    title: from the gap
+    area: [1, 1, 122, 81]
+    images:
+      - {file: image01.jpg, en: from the gap, ja: ほころび}
+    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+
+  - page: works02
+    title: wheat
+    area: [130, 47, 248, 125]
+    images:
+      - {file: image02.jpg, en: wheat, ja: 麦}
+    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+
+  - page: works03
+    title: recreate
+    area: [95, 132, 167, 212]
+    images:
+      - {file: image03.jpg, en: recreate, ja: 再生装置}
+    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+
+  - page: works04
+    title: hanging garden
+    area: [174, 150, 294, 227]
+    images:
+      - {file: image04.jpg, en: hanging garden, ja: 吊り庭}
+    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+
+  - page: works05
+    title: sleeping bag
+    area: [152, 234, 219, 354]
+    images:
+      - {file: image05.jpg, en: sleeping bag, ja: みの虫}
+
+  - page: works06
+    title: build up
+    area: [228, 296, 322, 374]
+    images:
+      - {file: image06.jpg, en: build up, ja: 増殖中}
+
+  - page: works07
+    title: Camden Recycle Center(London)
+    area: [197, 380, 290, 463]
+    images:
+      - {file: image07_1.jpg, en: Camden Recycle Center(London), ja: カムデンリサイクルセンター(ロンドン)}
+      - {file: image07_2.jpg, en: incubator, ja: 自家栽培}
+
+  - page: works08
+    title: carpet garden (glass)
+    area: [300, 425, 410, 489]
+    images:
+      - {file: image08.jpg, en: carpet garden (glass), ja: カーペットガーデン}

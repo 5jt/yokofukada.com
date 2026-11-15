@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="{{ site.name }}">
+<meta name="keywords" content="{{ site.keywords }}">
+<title>{{ title }} | {{ site.name }}</title>
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body class="page-{{ section }}">
+<div class="frame">
+<header class="side">
+  <a class="name" href="index.html">{{ site.name }}</a>
+  <nav>
+    <ul>
+    {% for item in site.nav %}
+      {% set on = item.page == current or (item.section is defined and item.section == section) %}
+      <li{% if on %} class="on"{% endif %}><a href="{{ item.page }}.html"{% if item.page == current %} aria-current="page"{% endif %}>{{ item.en }}<span lang="ja">{{ item.ja }}</span></a></li>
+    {% endfor %}
+    </ul>
+  </nav>
+  <p class="email">{{ site.email }}</p>
+  <p class="copyright">{{ site.copyright }}</p>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+</div>
+{% block scripts %}{% endblock %}
+</body>
+</html>

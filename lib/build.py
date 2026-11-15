@@ -1,0 +1,162 @@
+"""Build the yokofukada.com site from src/ into html/.
+
+Usage: .venv/bin/python lib/build.py
+
+Every link the generator writes is relative, so the same build works at
+the domain root and in a staging subfolder.
+"""
+
+from pathlib import Path
+
+import markdown
+import yaml
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
+from PIL import Image
+
+ROOT = Path(__file__).resolve().parent.parent
+SRC = ROOT / "src"
+OUT = ROOT / "html"
+TEMPLATES = Path(__file__).resolve().parent / "templates"
+
+
+def load_yaml(name):
+    return yaml.safe_load((SRC / name).read_text(encoding="utf-8"))
+
+
+def md(text):
+    return markdown.markdown(text, extensions=["nl2br", "md_in_html"])
+
+
+def read_page(path):
+    """Split a Markdown file into front matter (dict) and body (HTML)."""
+    text = path.read_text(encoding="utf-8")
+    meta = {}
+    if text.startswith("---\n"):
+        head, text = text[4:].split("\n---\n", 1)
+        meta = yaml.safe_load(head) or {}
+    return meta, md(text)
+
+
+_sizes = {}
+
+
+def size(file):
+    """Pixel size (width, height) of an image in src/img/."""
+    if file not in _sizes:
+        with Image.open(SRC / "img" / file) as im:
+            _sizes[file] = im.size
+    return _sizes[file]
+
+
+def image(spec):
+    """Add width and height to an image spec: {file, en, ja?}."""
+    spec = dict(spec)
+    if spec.get("file"):
+        spec["width"], spec["height"] = size(spec["file"])
+    return spec
+
+
+def collage_links(works):
+    """Percent-positioned link rectangles over the works collage."""
+    cw, ch = size(works["collage"])
+    links = []
+    for w in works["works"]:
+        left, top, right, bottom = w["area"]
+        links.append({
+            "page": w["page"],
+            "title": w["title"],
+            "style": (f"left:{100 * left / cw:.2f}%;top:{100 * top / ch:.2f}%;"
+                      f"width:{100 * (right - left) / cw:.2f}%;"
+                      f"height:{100 * (bottom - top) / ch:.2f}%"),
+        })
+    return {"file": works["collage"], "width": cw, "height": ch, "links": links}
+
+
+def build(out):
+    site = load_yaml("site.yaml")
+    works = load_yaml("works.yaml")
+    jewellery = load_yaml("jewellery.yaml")
+    tapestries = load_yaml("tapestries.yaml")
+
+    env = Environment(loader=FileSystemLoader(TEMPLATES),
+                      undefined=StrictUndefined, autoescape=True,
+                      trim_blocks=True, lstrip_blocks=True)
+
+    written = set()
+
+    def write(path, data):
+        """Write bytes to out/path, only if they differ from what's there."""
+        target = out / path
+        written.add(target)
+        if target.exists() and target.read_bytes() == data:
+            return
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(data)
+
+    for src_dir, dest in (("css", "css"), ("js", "js"), ("img", "images")):
+        for f in sorted((SRC / src_dir).iterdir()):
+            if f.is_file() and not f.name.startswith("."):
+                write(Path(dest) / f.name, f.read_bytes())
+
+    def render(template, page, section, **context):
+        html = env.get_template(template).render(
+            site=site, current=page, section=section, **context)
+        write(f"{page}.html", html.encode("utf-8"))
+        print(f"  {page}.html")
+
+    # Markdown pages
+    for path in sorted((SRC / "pages").glob("*.md")):
+        meta, body = read_page(path)
+        if meta.get("image"):
+            meta["image"] = image(meta["image"])
+        render("page.html", path.stem, path.stem, title=meta["title"], meta=meta, body=body)
+
+    # Works
+    collage = collage_links(works)
+    render("works.html", "works", "works", title="works", collage=collage)
+    for w in works["works"]:
+        w = dict(w, images=[image(i) for i in w["images"]])
+        render("work.html", w["page"], "work", title="works",
+               work=w, collage=collage)
+
+    # Jewellery
+    render("jewellery.html", "jewellery", "jewellery",
+           title=jewellery["title"], gallery=jewellery,
+           images=[image({"file": f}) for f in jewellery["images"]])
+
+    # Tapestries
+    number = 0
+    sections = []
+    for s in tapestries["sections"]:
+        s = dict(s)
+        if s.get("text"):
+            s["text"] = md((SRC / "text" / s["text"]).read_text(encoding="utf-8"))
+        pieces = []
+        for p in s["pieces"]:
+            number += 1
+            pieces.append(dict(image(p), number=number))
+        s["pieces"] = pieces
+        sections.append(s)
+    render("tapestries.html", "tapestries", "tapestries",
+           title=tapestries["title"], spec=tapestries,
+           covers=[image(c) for c in tapestries["covers"]],
+           sections=sections)
+
+    # Remove files left over from earlier builds. Directories are never
+    # removed: on the network share a removed directory can linger,
+    # unreadable, until every handle on it is closed.
+    for f in out.rglob("*"):
+        if f.is_file() and f not in written and not f.name.startswith("."):
+            f.unlink()
+            print(f"  removed {f.relative_to(out)}")
+
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser(description="Build the site.")
+    parser.add_argument("--out", type=Path, default=OUT,
+                        help="output directory (default: html/)")
+    out = parser.parse_args().out.resolve()
+    out.mkdir(parents=True, exist_ok=True)
+    build(out)
+    print(f"Built {out}")

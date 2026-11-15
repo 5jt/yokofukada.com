@@ -1,0 +1,49 @@
+# The Tapestries page, following Miki's sketch (plans/Yoko Fukada.png).
+#
+# Each piece: file (in src/img/; leave out until the photograph arrives),
+# shape (tall or wide, used for the placeholder), title, and an optional
+# second caption line.
+# Pieces are numbered in order down the page.
+
+title: Tapestries
+ja: タペストリー
+contact: Send me a message
+
+covers:
+  - {file: null, alt: "Re-Born Tapestry Exhibition catalogue cover"}
+  - {file: null, alt: "RE-BORN Tapestry Exhibition 2nd catalogue cover"}
+
+sections:
+  - heading: Featured work
+    cover: 0
+    pieces:
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+
+  - heading: Featured work
+    cover: 1
+    pieces:
+      - {shape: wide, title: Title to come}
+      - {shape: wide, title: Title to come}
+      - {shape: wide, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+
+  - heading: Tapestries made from Hikinuki-obi and Maru-obi
+    text: tapestries-introduction.md
+    pieces:
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}
+      - {shape: tall, title: Title to come}

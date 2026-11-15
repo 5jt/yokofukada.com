@@ -54,6 +54,24 @@ Project structure
 		img/		images ready for use
 
 
+Building and publishing
+-----------------------
+
+One-time setup:
+
+	python3 -m venv .venv
+	.venv/bin/pip install -r requirements.txt
+
+Content lives in `src/`: `site.yaml` (navigation), `works.yaml`, `jewellery.yaml`, `tapestries.yaml`, Markdown pages in `src/pages/` and longer texts in `src/text/`. Images go in `src/img/`.
+
+	.venv/bin/python lib/build.py        # build into html/
+	lib/publish                          # build, then show what rsync would change
+	lib/publish --go                     # build and publish to staging
+	lib/shot URL out.png [WIDTH HEIGHT]  # screenshot a page with headless Firefox
+
+Staging: https://lambenttechnology.com/wireframes/yokofukada/
+
+
 Reviews and responses
 ---------------------
 

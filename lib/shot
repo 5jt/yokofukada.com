@@ -1,0 +1,8 @@
+#!/bin/sh
+# Screenshot a URL with headless Firefox.
+# Usage: lib/shot URL OUT.png [WIDTH [HEIGHT]]
+url=$1 out=$2 w=${3:-1200} h=${4:-760}
+case $out in /*) ;; *) out=$PWD/$out ;; esac
+/Applications/Firefox.app/Contents/MacOS/firefox --headless \
+  --window-size="$w,$h" --screenshot "$out" "$url" >/dev/null 2>&1
+test -s "$out"
