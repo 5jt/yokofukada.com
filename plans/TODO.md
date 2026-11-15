@@ -14,7 +14,7 @@ Agenda for yokofukada.com. See `README.md` for the goal and stages.
 - [ ] Python generator in `lib/`, run in a virtual environment (add `.venv/` to `.gitignore`)
 - [ ] Source format: Markdown or similar, holding English and Japanese side by side in one page (the site is bilingual within each page, not two monolingual versions)
 - [ ] Keep the existing minimalist look; make the layout responsive, the navigation consistent and the images larger
-- [ ] Decide whether `html/` (generated) is committed or git-ignored
+- [x] `html/` (generated) is git-ignored; deploy from a fresh build
 
 ## Stage 3: Deploy to `lambent.net`
 
