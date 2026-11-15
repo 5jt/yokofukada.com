@@ -6,12 +6,16 @@ Agenda for yokofukada.com. See `README.md` for the goal and stages.
 
 - [x] Download the current site over FTP into `prev/ftp/` (branch `recover-prev`)
 - [x] Compare it with the live site (HTTP only; no HTTPS): the live site is a subset of the FTP copy and identical to it
-- [ ] Decide whether to commit `prev/ftp/private/webcd/` (an older version of the site) to the public repo
-- [ ] Find the character encodings (probably Shift_JIS for some or all pages) and convert to UTF-8
-- [ ] List the pages, the navigation structure and the images, with the size of each image
+- [x] Commit `prev/ftp/private/webcd/` (an older version of the site)
+- [x] List the pages, navigation, bilingual pattern and images: see `plans/inventory.md`
+- [ ] Merge `recover-prev`
+- [ ] Remove `phpinfo.php` and `jw.php` from Fasthosts now (security holes)
+
+Decided: the IF project is over; `ifproject/` is archived in `prev/` and not rebuilt.
 
 ## Stage 2: Regenerate the site
 
+- [ ] Convert Shift_JIS and ISO-8859-1 text to UTF-8
 - [ ] Python generator in `lib/`, run in a virtual environment (add `.venv/` to `.gitignore`)
 - [ ] Source format: Markdown or similar, holding English and Japanese side by side in one page (the site is bilingual within each page, not two monolingual versions)
 - [ ] Keep the existing minimalist look; make the layout responsive, the navigation consistent and the images larger
