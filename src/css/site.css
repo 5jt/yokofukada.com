@@ -95,6 +95,10 @@ main {
   font-size: 9px;
 }
 
+/* The copyright line at the foot of the page, shown only on phones,
+   where the navigation column becomes a bar across the top. */
+.foot { display: none; }
+
 /* Common pieces
    -------------------------------------------------------------------- */
 
@@ -331,7 +335,7 @@ figcaption [lang="ja"] { font-size: 8px; }
   .frame,
   .page-tapestries .frame {
     grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto 1fr auto;
   }
 
   .side { padding: 20px 16px 12px; }
@@ -344,6 +348,8 @@ figcaption [lang="ja"] { font-size: 8px; }
   .side li { margin: 0; }
   .email { margin-top: 12px; }
   .copyright { display: none; }
+  .foot { display: block; background: #fff; padding: 0 16px 24px; font-size: 11px; }
+  .foot p { margin: 0; }
 
   main,
   .page-aboutme main, .page-works main, .page-work main,
