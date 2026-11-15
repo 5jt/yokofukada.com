@@ -8,8 +8,8 @@ Agenda for yokofukada.com. See `README.md` for the goal and stages.
 - [x] Compare it with the live site (HTTP only; no HTTPS): the live site is a subset of the FTP copy and identical to it
 - [x] Commit `prev/ftp/private/webcd/` (an older version of the site)
 - [x] List the pages, navigation, bilingual pattern and images: see `plans/inventory.md`
-- [ ] Merge `recover-prev`
-- [ ] Remove `phpinfo.php` and `jw.php` from Fasthosts now (security holes)
+- [x] Merge `recover-prev`
+- [x] 2026-11-15: deleted `phpinfo.php` and `jw.php` from Fasthosts; patched the live `jewellery.php` so its popups open the image directly. `prev/ftp/htdocs/` is the snapshot from before these changes.
 
 Decided: the IF project is over; `ifproject/` is archived in `prev/` and not rebuilt.
 
@@ -36,10 +36,14 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 
 ## Stage 5: DNS
 
+- [ ] Redirect `jewellery.php` to the new jewellery page (all other page names are kept)
 - [ ] Point the `yokofukada.com` and `www.yokofukada.com` A records at the droplet
 - [ ] Keep the MX records at Fasthosts while `yoko@yokofukada.com` may be in use
 
 ## Open questions
+
+- [ ] Ask Yoko whether to keep `yoko@yokofukada.com` on the site and, if not, what to use for contact
+- [ ] Content fixes awaiting approval: typos (see `plans/inventory.md`), the "© yoko fukada -2008" line
 
 - [ ] Which extra pages does Yoko want, and with what content? (Not yet known.)
 - [ ] Do higher-resolution originals of the images exist? If not, use what we recover from the old site.
