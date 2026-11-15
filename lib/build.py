@@ -124,18 +124,22 @@ def build(out):
            title=jewellery["title"], gallery=jewellery,
            images=[image({"file": f}) for f in jewellery["images"]])
 
-    # Tapestries
-    number = 0
+    # Tapestries. A piece's `file` may be one image or a list (strips of
+    # one piece); either way the template gets a list of images.
+    def strips(p):
+        files = p.get("file")
+        if not files:
+            return []
+        if isinstance(files, str):
+            files = [files]
+        return [image({"file": f}) for f in files]
+
     sections = []
     for s in tapestries["sections"]:
         s = dict(s)
         if s.get("text"):
             s["text"] = md((SRC / "text" / s["text"]).read_text(encoding="utf-8"))
-        pieces = []
-        for p in s["pieces"]:
-            number += 1
-            pieces.append(dict(image(p), number=number))
-        s["pieces"] = pieces
+        s["pieces"] = [dict(p, images=strips(p)) for p in s["pieces"]]
         sections.append(s)
     render("tapestries.html", "tapestries", "tapestries",
            title=tapestries["title"], spec=tapestries,

@@ -282,7 +282,7 @@ figcaption [lang="ja"] { font-size: 8px; }
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(var(--columns, 5), minmax(0, 1fr));
   gap: 48px 32px;
   align-items: end;
 }
@@ -366,3 +366,10 @@ figcaption [lang="ja"] { font-size: 8px; }
   .with-text .pieces { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
   .pieces li.wide { width: 100%; }
 }
+
+/* Tapestries: pieces with photographs */
+.strips { display: flex; flex-direction: column; gap: 14px; }
+.caption { display: flex; gap: 0.6em; align-items: baseline; }
+.caption .num { margin-right: 0; flex: none; }
+.square .piece { aspect-ratio: auto; }
+.t-head .cover, .t-side .cover { height: auto; aspect-ratio: auto; }

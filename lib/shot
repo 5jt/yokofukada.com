@@ -1,8 +1,12 @@
 #!/bin/sh
-# Screenshot a URL with headless Firefox.
+# Screenshot a URL with headless Firefox, with lazy image loading turned
+# off so that the whole page is captured.
 # Usage: lib/shot URL OUT.png [WIDTH [HEIGHT]]
 url=$1 out=$2 w=${3:-1200} h=${4:-760}
 case $out in /*) ;; *) out=$PWD/$out ;; esac
-/Applications/Firefox.app/Contents/MacOS/firefox --headless \
+profile=$(mktemp -d "${TMPDIR:-/tmp}/shot.XXXXXX")
+echo 'user_pref("dom.image-lazy-loading.enabled", false);' > "$profile/user.js"
+/Applications/Firefox.app/Contents/MacOS/firefox --headless --profile "$profile" \
   --window-size="$w,$h" --screenshot "$out" "$url" >/dev/null 2>&1
+rm -rf "$profile"
 test -s "$out"
