@@ -1,0 +1,273 @@
+@charset "Shift_JIS";
+
+/* 全体構造
+---------------------------------------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  background: #ffffff url(../images/back.gif) repeat-y;
+  background-color: #ffffff;
+  font-size: small;
+  line-height: 2em;
+  color: black;
+}
+
+p {
+	font-family: "Gill Sans", Arial, Helvetica, swiss, sans-serif;
+	font-size: 90%;
+}
+#ja { font-family: "ヒラギノ角ゴ Ｐｒｏ Ｗ３","ＭＳ Ｐゴシック",Osaka,sans-serif; font-size: 70%;}	
+
+#wrapper {
+  width: 977px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ﾒﾆｭｰ
+---------------------------------------------------- */
+#nav {
+  position: absolute;
+  top: 65px;
+  left: 36px;
+  width: 133px;
+  height: 600px;
+}
+
+#nav img {
+	display: block;
+	position: relative;
+	width: 133px;
+}
+
+#nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#nav li {
+	margin: 0;
+	padding: 0;
+	width: 133px;
+	height: 48px;
+	text-indent: -9999px;
+}
+
+#nav li {
+	margin: 0;
+	padding: 0;
+	width: 133px;
+	height: 44px;
+	text-indent: -9999px;
+}
+
+#nav li a {
+	text-decolation: none;
+	display: block;
+	width: 133px;
+	height: 44px;
+}
+
+#nav li#home {
+	background: url(../images/nav.gif) no-repeat 0 0;
+}
+
+#nav li#works {
+	background: url(../images/nav.gif) no-repeat 0 -44px;
+}
+
+#nav li#jewellery {
+	background: url(../images/nav.gif) no-repeat 0 -88px;
+}
+
+#nav li#aboutme {
+	background: url(../images/nav.gif) no-repeat 0 -132px;
+}
+
+#nav li#project {
+	background: url(../images/nav.gif) no-repeat 0 -176px;
+}
+
+#nav li#home_on {
+	background: url(../images/nav.gif) no-repeat -133px 0;
+}
+
+#nav li#works_on {
+	background: url(../images/nav.gif) no-repeat -133px -44px;
+}
+
+#nav li#jewellery_on {
+	background: url(../images/nav.gif) no-repeat -133px -88px;
+}
+
+#nav li#aboutme_on {
+	background: url(../images/nav.gif) no-repeat -133px -132px;
+}
+
+#nav li#project_on {
+	background: url(../images/nav.gif) no-repeat -133px -176px;
+}
+
+#nav li#home a:hover{
+	background: url(../images/nav.gif) no-repeat -133px 0px;
+}
+
+#nav li#works a:hover {
+	background: url(../images/nav.gif) no-repeat -133px -44px;
+}
+
+#nav li#jewellery a:hover {
+	background: url(../images/nav.gif) no-repeat -133px -88px;
+}
+
+#nav li#aboutme a:hover {
+	background: url(../images/nav.gif) no-repeat -133px -132px;
+}
+
+#nav li#project a:hover {
+	background: url(../images/nav.gif) no-repeat -133px -176px;
+}
+
+/*コピーライト*/
+p#en{
+	margin-top: 245px;
+	padding-left: 5px;
+	font-size: xx-small;
+	text-transform: lowercase;
+}
+
+/* Index.Html
+--------------------------------------------------- */
+#maincontent {
+  	position: absolute;
+	padding: 0;
+  	top: 90px;
+  	left: 354px;
+  	width: 450px;
+}
+
+/* homeの文章 */
+#content_e {
+	margin-top: 1em;
+	float: left;
+	width: 60%;
+	text-align: left;
+}
+
+/*トップのキャプション*/
+#right {
+	text-align: right;
+	font-size: xx-small;
+	margin: 0;
+	padding-top:  0;
+	line-height: 1.5em;
+ }
+
+/* aboutのページ
+---------------------------------------------------- */
+p#about {
+	margin-top: 50px;
+}
+
+/* worksのページ
+---------------------------------------------------- */
+img#work_main {
+	position: absolute;
+	top: 112px;
+	left: 363px;
+}
+
+/* worksの各ページ
+---------------------------------------------------- */
+#page_works {
+	position: absolute;
+	top: 0;
+	left: 202px;
+	width: 775px;
+}
+
+#works_small{
+	position: absolute;
+	left: 26px;
+	top: 336px; 
+	padding: 0;
+}
+
+#page_works p {
+	font-size: xx-small;
+	margin: 0;
+	padding: 0;
+	text-align: right;
+	line-height: 1.5em;
+}
+
+#works01{
+	position: absolute;
+	top: 112px;
+	left: 339px;
+	width: 267px;
+}
+
+#works02 {
+	position: absolute;
+	top: 148px;
+	left: 305px;
+	width: 339px;
+}
+
+#works03 {
+	position: absolute;
+	top: 150px;
+	left: 249px;
+	width: 440px;
+}
+
+#works04 {
+	position: absolute;
+	top: 150px;
+	left: 249px;
+	width: 439px;
+}
+
+#works05 {
+	position: absolute;
+	top: 150px;
+	left: 275px;
+	width: 394px;
+}
+
+#works06 {
+	position: absolute;
+	top: 106px;
+	left: 298px;
+	width: 315px;
+}
+
+#works07_1 {
+	position: absolute;
+	top: 119px;
+	left: 190px;
+	width: 285px;
+}
+
+#works07_2 {
+	position: absolute;
+	top: 119px;
+	left: 495px;
+	width: 226px;
+}
+
+#works08 {
+	position: absolute;
+	top: 150px;
+	left: 274px;
+	width: 418px;
+}
+
+#page_works p#photo {
+	position: absolute;
+	top: 648px;
+	left: 515px;
+	color: rgb(137,137,137);
+}

@@ -1,0 +1,167 @@
+/* 
+ *	Styles for www.yokofukada.com 
+ *	Stephen Taylor ・sjt@lambenttechnology.com
+ */
+
+body {
+        margin-top:100px;
+	text-align:center;	
+	color: #555;
+}
+
+table.back{
+	margin-left:auto;
+	margin-right:auto;
+	width:618px;
+	padding:0px;
+	border-width:0px;
+	background: white url(images/logo.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+}
+
+/*ページのベースと枠となるテーブル*/
+table.base{
+	padding:0px;
+	margin-top:0px;
+	margin-left:0px;
+	width:618px;
+	border-width:1px;
+	border-color:rgb(200,200,200);
+	border-style:solid;
+}
+/*左側のメニューのテーブル*/
+table.menu{
+	width:132px;
+	border-width:0px;	
+}
+
+/*右側の黒枠となるテーブル*/
+table.frame{
+	width:453px;
+	background-color:rgb(235,235,235);
+	border-width:0px;
+	border-color:black;
+	border-style:solid;
+}
+
+/*HANGA用のテーブル*/
+table.frame_hanga{
+	width:453px;
+	background-color:white;
+	border-width:0px;
+	border-color:black;
+	border-style:solid;
+}
+
+table.frame_p{
+	width:453px;
+	background-color:rgb(235,235,235);
+	border-width:0px;
+	border-color:black;
+	border-style:solid;
+	padding-left:100px
+}
+.pd100{padding-left:100px}
+
+img{border-width: 0;}
+
+/* 標準のリンク */
+A:link {
+  color: black; /* リンクの色 */
+  text-decoration: none; /* 文字装飾 */
+}
+/* 訪問済みリンク */
+A:visited {   color: black; /* リンクの色 */
+  text-decoration: none; /* 文字装飾 */
+}
+/* 現在開いているリンク */
+A:active {   color: black; /* リンクの色 */
+  text-decoration: none; /* 文字装飾 */
+}
+/* マウスカーソルが上に来た時のリンク */
+A:hover {
+  color: black; /* リンクの色 */
+  text-decoration: underline; /* 文字装飾 */
+}
+
+.ja{
+	font-family: "ＭＳ Ｐゴシック",Osaka,sans-serif;
+	font-size: x-small;
+	line-height:180%;
+}	
+
+.en{
+    	font-family:Times;
+	font-size: small;
+	line-height:180%;
+}
+
+.en_xx_small{
+    	font-family:Times;
+	font-size: xx-small;
+	line-height:180%;
+}
+
+.just{	text-align:justify}
+.right{	text-align:right}
+.left{	text-align:left}
+.middle{vertical-align:middle}
+.bottom{vertical-align:bottom}
+.vtop{vertical-align:top;
+text-align:right;}
+.just{
+	text-align:justify;}
+
+img.menu{
+	position: relative;
+	top:286px;
+}
+
+img.left {
+	float: left;
+	margin-bottom: 1em;
+}
+
+img.right {
+	float: right;
+	margin-right: 4px;
+	margin-bottom: 1em;
+}
+
+img.project {
+	border-width: 0;
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+
+p {
+	clear: both;
+}
+
+p.right{
+	text-align: right;
+	font-family: "ＭＳ Ｐゴシック",Osaka,sans-serif;
+	font-size: x-small;
+	line-height:180%;
+	margin-right: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.project_en{
+    	font-family:Times;
+	font-size: small;
+	line-height:180%;
+	margin-right: 2em;
+	margin-bottom: 0;
+}
+
+p.project_ja{
+	font-family: "ＭＳ Ｐゴシック",Osaka,sans-serif;
+	font-size: x-small;
+	line-height:180%;
+	margin-right: 1em;
+	margin-top: 0;
+	margin-bottom: 0;
+}

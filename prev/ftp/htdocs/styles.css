@@ -1,0 +1,25 @@
+/* 
+ *	Styles for www.yokofukada.com 
+ *	Stephen Taylor • sjt@lambenttechnology.com
+ */
+
+body {
+	background:rgb(196,196,196); 
+	font-family:Gill Sans MT,Arial,Helvetica,swiss,sans-serif;
+	}
+p { font-size:80% }
+img {border:1px solid #aaa}
+a {text-decoration:none}
+a:hover {text-decoration:underline}
+	
+.hide {display:none}
+.small {font-size:80%}
+.imghover {
+cursor:pointer;
+border:1px solid white;
+}
+.imgout {
+cursor:auto;
+border:1px solid #aaa;
+}
+
