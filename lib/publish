@@ -4,6 +4,7 @@
 # Usage: lib/publish [--go] [staging|production]
 #
 # Without --go, rsync only shows what it would change (a dry run).
+# Set PUBLISH_HOST to the SSH login for the droplet (default: lambent.net).
 # staging (the default) publishes to
 #   https://lambenttechnology.com/wireframes/yokofukada/
 set -eu
@@ -14,7 +15,7 @@ go=
 if [ "${1:-}" = "--go" ]; then go=1; shift; fi
 target=${1:-staging}
 
-host=lambent.net
+host=${PUBLISH_HOST:-lambent.net}   # e.g. PUBLISH_HOST=user@lambent.net, or an ~/.ssh/config alias
 case $target in
   staging)    dest=/var/www/lambenttechnology.com/wireframes/yokofukada/ ;;
   production) echo "production path not yet set up" >&2; exit 1 ;;
