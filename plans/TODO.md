@@ -63,9 +63,8 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 
 Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share to `~/Projects/webhands` (the share kept losing access to folders); Miki supplies material through the Dropbox folder `Yoko site/`.
 
-- [ ] Share the Dropbox folder `Yoko site` with Miki (Stephen, in Dropbox)
-- [ ] Tell Miki about the new arrangement
-- [ ] Questions for Miki are in `Yoko site/for Miki/Questions for Miki 2026-11-15.md` (Tapestries titles, credit, introduction, spelling, typos, copyright line); fold her answers into the items above
+- [x] Shared the Dropbox folder `Yoko site` with Miki; she is using it
+- [x] Questions for Miki (`Yoko site/for Miki/`): answered 2026-11-15 and folded in; questions 12 and 13 (for Yoko) still open below
 - [ ] Later: let Miki replace images and edit Markdown pages herself (e.g. GitHub's web editor on a branch, or a sync from her Dropbox folder)
 - [ ] Put the `webhands/` planning files (`plans/`, `progress/`, `CLAUDE.md`) under version control too?
 - [ ] Once the local copy has been in use for a while, archive or delete the copy on the share
