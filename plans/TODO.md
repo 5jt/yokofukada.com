@@ -73,7 +73,7 @@ Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share t
 ## Open questions
 
 - [x] Typos in `plans/inventory.md` fixed (Miki approved; "Yamanouchi", "Camden Recycling Centre (London)")
-- [ ] The "© yoko fukada -2008" line
+Decided (2026-11-15): the "© yoko fukada -2008" line stays as it is.
 
 - [ ] Which extra pages does Yoko want, and with what content? (Not yet known.)
 - [ ] Do higher-resolution originals of the images exist? If not, use what we recover from the old site.
