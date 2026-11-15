@@ -4,8 +4,9 @@ Agenda for yokofukada.com. See `README.md` for the goal and stages.
 
 ## Stage 1: Recover content from the current site
 
-- [ ] Download the current site over FTP (credentials in `secrets/ftp-credentials.json`, git-ignored) into `prev/`
-- [ ] Also mirror the live site (`wget --mirror`) to check for differences between what is on the server and what is served
+- [x] Download the current site over FTP into `prev/ftp/` (branch `recover-prev`)
+- [x] Compare it with the live site (HTTP only; no HTTPS): the live site is a subset of the FTP copy and identical to it
+- [ ] Decide whether to commit `prev/ftp/private/webcd/` (an older version of the site) to the public repo
 - [ ] Find the character encodings (probably Shift_JIS for some or all pages) and convert to UTF-8
 - [ ] List the pages, the navigation structure and the images, with the size of each image
 
@@ -18,11 +19,11 @@ Agenda for yokofukada.com. See `README.md` for the goal and stages.
 
 ## Stage 3: Deploy to `lambent.net`
 
-Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds the site and copies it to the droplet with `rsync`. Drafts are staged in the `wireframe` folder of `lambenttechnology.com` on the droplet.
+Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds the site and copies it to the droplet with `rsync`. Drafts are staged under `/var/www/lambenttechnology.com/wireframes/` on the droplet (proposed: `wireframes/yokofukada/`). No password protection. Stephen has SSH access and runs the script.
 
 - [ ] Generator writes relative links only, so the same build works under `wireframe/` and at the domain root
 - [ ] Publish script in `lib/`: build, then `rsync` to either staging (`wireframe`) or production
-- [ ] Confirm the server paths and the SSH user the script will use (Stephen runs it; Claude can't reach the server)
+- [ ] Confirm the production path for `yokofukada.com`
 - [ ] Production site configuration and HTTPS for `yokofukada.com` (Jack, once)
 
 ## Stage 4: Revise with Yoko
