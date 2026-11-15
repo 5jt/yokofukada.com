@@ -12,6 +12,7 @@
 title: Tapestries
 ja: タペストリー
 contact: Send me a message
+credit: "Photography by: Hideto Ichige"
 
 covers:
   - {art: Re-Born1/vol.1_cover.jpg, file: reborn1-cover.jpg, alt: "Re-Born Tapestry Exhibition catalogue cover"}
@@ -22,15 +23,15 @@ sections:
     cover: 0
     pieces:
       - {number: 2,  title: Lion and Peonies,  shape: tall, art: "Re-Born1/2 Lion and Peonies.jpg",  file: reborn1-02.jpg}
-      - {number: 3,  title: Arabesque pattern, shape: tall, art: "Re-Born1/3 Arabesque pattern.jpg", file: reborn1-03.jpg}
-      - {number: 5,  title: Mountain range,    shape: tall, art: "Re-Born1/5 Mountain range.jpg",    file: reborn1-05.jpg}
-      - {number: 11, title: Hexagonal pattern, shape: tall, art: "Re-Born1/11 Hexagonal pattern.jpg", file: reborn1-11.jpg}
-      - {number: 13, title: Ocean wave pattern, shape: tall, art: "Re-Born1/13 Ocean wave pattern.jpg", file: reborn1-13.jpg}
+      - {number: 3,  title: Arabesque Pattern, shape: tall, art: "Re-Born1/3 Arabesque pattern.jpg", file: reborn1-03.jpg}
+      - {number: 5,  title: Mountain Range,    shape: tall, art: "Re-Born1/5 Mountain range.jpg",    file: reborn1-05.jpg}
+      - {number: 11, title: Hexagonal Pattern, shape: tall, art: "Re-Born1/11 Hexagonal pattern.jpg", file: reborn1-11.jpg}
+      - {number: 13, title: Ocean Wave Pattern, shape: tall, art: "Re-Born1/13 Ocean wave pattern.jpg", file: reborn1-13.jpg}
       - {number: 14, title: Peacocks,          shape: tall, art: "Re-Born1/14 Peacocks.jpg",          file: reborn1-14.jpg}
       - {number: 22, title: Flowers and Birds, shape: tall, art: "Re-Born1/22 Flowers and Birds.jpg", file: reborn1-22.jpg}
-      - {number: 29, title: Silver grass,      shape: square, art: "Re-Born1/29 Silver grass.jpg",    file: reborn1-29.jpg}
-      - {number: 30, title: Ivy vine and Flowers, shape: square, art: "Re-Born1/30 Ivy vine and Flowers.jpg", file: reborn1-30.jpg}
-      - {number: 33, title: Rising Vapor and Paulownia, shape: square, art: "Re-Born1/33 Rising Vapor and Paulownia.jpg", file: reborn1-33.jpg}
+      - {number: 29, title: Silver Grass,      shape: square, art: "Re-Born1/29 Silver grass.jpg",    file: reborn1-29.jpg}
+      - {number: 30, title: Ivy Vine and Flowers, shape: square, art: "Re-Born1/30 Ivy vine and Flowers.jpg", file: reborn1-30.jpg}
+      - {number: 33, title: Rising Vapour and Paulownia, shape: square, art: "Re-Born1/33 Rising Vapor and Paulownia.jpg", file: reborn1-33.jpg}
 
   - heading: Featured work
     cover: 1
@@ -41,16 +42,16 @@ sections:
         shape: wide
         art: ["Re-Born2/8-1 Variety of Flowers.jpg", "Re-Born2/8-2 Variety of Flowers.jpg", "Re-Born2/8-3 Variety of Flowers.jpg"]
         file: [reborn2-08-1.jpg, reborn2-08-2.jpg, reborn2-08-3.jpg]
-      - {number: 2,  title: Young pine motif, shape: tall, art: "Re-Born2/2 Young pine motif.jpg", file: reborn2-02.jpg}
-      - {number: 5,  title: An abundance of Flowers, shape: tall, art: "Re-Born2/5 An abundance of Flowers.jpg", file: reborn2-05.jpg}
-      - {number: 11, title: Crane and pine bark diamond pattern, shape: tall, art: "Re-Born2/11 Crane and pine bark diamond pattern.jpg", file: reborn2-11.jpg}
-      - {number: 18, title: Genji incence pattern combined with square fawn spot check designs, shape: tall, art: "Re-Born2/18 Genji incence pattern combined with square fawn spot check designs.jpg", file: reborn2-18.jpg}
-      - {number: 20, title: Brocade with Housoge(imaginary flower), shape: tall, art: "Re-Born2/20 Brocade with Housoge(imaginary flower).jpg", file: reborn2-20.jpg}
-      - {number: 21, title: Jodaisa(an antique type of silk gauze with gold threads)with arabesque pattern, shape: tall, art: "Re-Born2/21 Jodaisa(an antique type of silk gauze with gold threads)with arabesque pattern.jpg", file: reborn2-21.jpg}
+      - {number: 2,  title: Young Pine Motif, shape: tall, art: "Re-Born2/2 Young pine motif.jpg", file: reborn2-02.jpg}
+      - {number: 5,  title: An Abundance of Flowers, shape: tall, art: "Re-Born2/5 An abundance of Flowers.jpg", file: reborn2-05.jpg}
+      - {number: 11, title: Crane and Pine Bark Diamond Pattern, shape: tall, art: "Re-Born2/11 Crane and pine bark diamond pattern.jpg", file: reborn2-11.jpg}
+      - {number: 18, title: Genji Incense Pattern Combined with Square Fawn Spot Check Designs, shape: tall, art: "Re-Born2/18 Genji incence pattern combined with square fawn spot check designs.jpg", file: reborn2-18.jpg}
+      - {number: 20, title: "Brocade with Housoge (imaginary flower)", shape: tall, art: "Re-Born2/20 Brocade with Housoge(imaginary flower).jpg", file: reborn2-20.jpg}
+      - {number: 21, title: "Jodaisa (an antique type of silk gauze with gold threads) with Arabesque Pattern", shape: tall, art: "Re-Born2/21 Jodaisa(an antique type of silk gauze with gold threads)with arabesque pattern.jpg", file: reborn2-21.jpg}
 
   - heading: Tapestries made from Hikinuki-obi and Maru-obi
     text: tapestries-introduction.md
     pieces:
       - {number: 22, title: Flowing Water with Pine and Crane, shape: tall, art: "Re-Born2/22 Flowing Water with Pine and Crane.jpg", file: reborn2-22.jpg}
-      - {number: 32, title: "Flowing Water with Pine,Bamboo,Plum flower and Crane", shape: tall, art: "Re-Born2/32 Flowing Water with Pine,Bamboo,Plum flower and Crane.jpg", file: reborn2-32.jpg}
+      - {number: 32, title: "Flowing Water with Pine, Bamboo, Plum Flower and Crane", shape: tall, art: "Re-Born2/32 Flowing Water with Pine,Bamboo,Plum flower and Crane.jpg", file: reborn2-32.jpg}
       - {number: 35, title: Title to come, shape: tall, art: "Re-Born2/35.jpg", file: reborn2-35.jpg}

@@ -40,5 +40,6 @@
   </ol>
 </section>
 {% endfor %}
+{% if spec.credit is defined %}<p class="credit">{{ spec.credit }}</p>{% endif %}
 </div>
 {% endblock %}

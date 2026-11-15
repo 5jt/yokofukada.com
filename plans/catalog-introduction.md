@@ -20,11 +20,7 @@ About 230 words, down from about 560. For Miki and Yoko to approve. Changes from
 
 **What changed:** sentences merged and shortened; British spelling ("colour") to match the rest of the site.
 
-**To check:**
-
-- The original says "together two obi … for the front and back" — a verb is missing ("sew together"?).
-- The draft assumes the third obi is the frame; the original implies it but doesn't say so.
-- Credits from the catalogue that may belong on the web page: Photo / Hideto Ichige; Design / Tae Katsumata.
+**Approved** by Yoko (via Miki, 2026-11-15). Confirmed: "sew together two obi"; the third obi makes the frame. The page credits the photographs to Hideto Ichige.
 
 ## Original text (transcribed)
 

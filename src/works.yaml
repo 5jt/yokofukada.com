@@ -13,28 +13,28 @@ works:
     area: [1, 1, 122, 81]
     images:
       - {file: image01.jpg, en: from the gap, ja: ほころび}
-    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+    credit: "Photography by: Miki Yamanouchi (www.mikiy.com)"
 
   - page: works02
     title: wheat
     area: [130, 47, 248, 125]
     images:
       - {file: image02.jpg, en: wheat, ja: 麦}
-    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+    credit: "Photography by: Miki Yamanouchi (www.mikiy.com)"
 
   - page: works03
     title: recreate
     area: [95, 132, 167, 212]
     images:
       - {file: image03.jpg, en: recreate, ja: 再生装置}
-    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+    credit: "Photography by: Miki Yamanouchi (www.mikiy.com)"
 
   - page: works04
     title: hanging garden
     area: [174, 150, 294, 227]
     images:
       - {file: image04.jpg, en: hanging garden, ja: 吊り庭}
-    credit: "Photography by: Miki Yamanouch (www.mikiy.com)"
+    credit: "Photography by: Miki Yamanouchi (www.mikiy.com)"
 
   - page: works05
     title: sleeping bag
@@ -49,10 +49,10 @@ works:
       - {file: image06.jpg, en: build up, ja: 増殖中}
 
   - page: works07
-    title: Camden Recycle Center(London)
+    title: Camden Recycling Centre (London)
     area: [197, 380, 290, 463]
     images:
-      - {file: image07_1.jpg, en: Camden Recycle Center(London), ja: カムデンリサイクルセンター(ロンドン)}
+      - {file: image07_1.jpg, en: Camden Recycling Centre (London), ja: カムデンリサイクルセンター(ロンドン)}
       - {file: image07_2.jpg, en: incubator, ja: 自家栽培}
 
   - page: works08

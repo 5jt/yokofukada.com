@@ -26,12 +26,13 @@ Decided: the IF project is over; `ifproject/` is archived in `prev/` and not reb
 Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko) is one new page added to the existing site and reached from its navigation (option b). English only. Typography is negotiable. On phones, sections stack in one column with tapestries in a two-column grid.
 
 - [x] Photographs and titles from Miki (in `src/art/`, titles from file names)
-- [ ] Title for Re-Born 2 no. 35; check title typos ("incence", "fawn spot check", spacing around brackets and commas)
-- [ ] Photo credit for the tapestries (the catalogue credits Hideto Ichige)
-- [ ] Confirm: catalogue numbers as captions; the sketch's BIO block left out (about me has it); the page wider than the old 977 px frame
-- [ ] Get Miki's and Yoko's approval of the shortened introduction (`plans/catalog-introduction.md`)
+- [ ] Title for Re-Born 2 no. 35 (Miki is asking Yoko)
+- [x] Title typos fixed; titles in title case (parenthetical glosses left lower case); British spelling ("Vapour")
+- [x] Photo credit for the tapestries: "Photography by: Hideto Ichige" (Miki: no need to ask him)
+- [x] Confirmed by Miki: catalogue numbers as captions; the sketch's BIO block left out (about me has it); the page wider than the old 977 px frame
+- [x] Yoko approved the shortened introduction (`plans/catalog-introduction.md`)
 - [x] Page named Tapestries / タペストリー; new biography moved to about me
-- [ ] Spelling: British throughout? ("jewelry" in the new biography vs "jewellery" elsewhere)
+- [x] Spelling: British throughout (Miki)
 
 Decided (2026-11-15): the old home page was obsolete and is removed; the Tapestries page is the landing page (`index.html`). The header email address is a mailto link.
 Decided (2026-11-15): contact is by `yoko@yokofukada.com`, shown in plain text on every page and as a mailto button on Tapestries; no form, no obfuscation (20 years of exposure have caused no trouble).
@@ -71,7 +72,8 @@ Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share t
 
 ## Open questions
 
-- [ ] Content fixes awaiting approval: typos (see `plans/inventory.md`), the "© yoko fukada -2008" line
+- [x] Typos in `plans/inventory.md` fixed (Miki approved; "Yamanouchi", "Camden Recycling Centre (London)")
+- [ ] The "© yoko fukada -2008" line
 
 - [ ] Which extra pages does Yoko want, and with what content? (Not yet known.)
 - [ ] Do higher-resolution originals of the images exist? If not, use what we recover from the old site.
