@@ -56,6 +56,16 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 - [ ] Point the `yokofukada.com` and `www.yokofukada.com` A records at the droplet
 - [ ] Keep the MX records at Fasthosts while `yoko@yokofukada.com` may be in use
 
+## Collaboration
+
+Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share to `~/Projects/webhands` (the share kept losing access to folders); Miki supplies material through the Dropbox folder `Yoko site/`.
+
+- [ ] Share the Dropbox folder `Yoko site` with Miki (Stephen, in Dropbox)
+- [ ] Tell Miki about the new arrangement
+- [ ] Later: let Miki replace images and edit Markdown pages herself (e.g. GitHub's web editor on a branch, or a sync from her Dropbox folder)
+- [ ] Put the `webhands/` planning files (`plans/`, `progress/`, `CLAUDE.md`) under version control too?
+- [ ] Once the local copy has been in use for a while, archive or delete the copy on the share
+
 ## Open questions
 
 - [ ] Ask Yoko whether to keep `yoko@yokofukada.com` on the site and, if not, what to use for contact

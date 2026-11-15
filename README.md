@@ -38,6 +38,14 @@ We foresee each year a few requests to add new content.
 If Yoko does not use her `yoko@yokofukada.com` email address, the Fasthosts hosting package can be removed and only the DNS registration left there.
 
 
+Where things live
+----------------
+
+-   This repository: on Stephen's Mac at `~/Projects/webhands/sites/yokofukada.com`, shared through GitHub. Never keep it in a synced or network folder (Dropbox, the `mackenzie-shared` share): they corrupt `.git` and lose files.
+-   Material from Miki (images, sketches, texts): the shared Dropbox folder `Yoko site/from Miki`. Copy it into the repo (`src/art/`, `plans/`) and commit. Things for Miki to look at go in `Yoko site/for Miki`.
+-   Review by Yoko and Miki: the staging site, https://lambenttechnology.com/wireframes/yokofukada/
+
+
 Project structure
 -----------------
 
