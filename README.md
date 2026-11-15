@@ -64,6 +64,7 @@ One-time setup:
 
 Content lives in `src/`: `site.yaml` (navigation), `works.yaml`, `jewellery.yaml`, `tapestries.yaml`, Markdown pages in `src/pages/` and longer texts in `src/text/`. Images go in `src/img/`.
 
+	.venv/bin/python lib/prepare_images.py  # make web copies of new originals in src/art/
 	.venv/bin/python lib/build.py        # build into html/
 	lib/publish                          # build, then show what rsync would change
 	lib/publish --go                     # build and publish to staging

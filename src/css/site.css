@@ -311,6 +311,20 @@ figcaption [lang="ja"] { font-size: 8px; }
 }
 .caption .num { font-weight: bold; margin-right: 0.4em; }
 
+/* Tablets and narrow desktop windows: Tapestries in fewer columns */
+
+@media (min-width: 761px) and (max-width: 1000px) {
+  .page-tapestries main { padding-left: 32px; padding-right: 32px; }
+  .t-head { grid-template-columns: minmax(0, 1fr); }
+  .covers .cover { width: calc(50% - 8px); max-width: 290px; }
+  .t-section,
+  .t-section.with-text { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .t-section.with-text .t-side { order: 0; }
+  .t-side .cover { display: none; }
+  .pieces,
+  .with-text .pieces { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
 /* Phones and narrow windows
    -------------------------------------------------------------------- */
 
