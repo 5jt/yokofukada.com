@@ -16,19 +16,25 @@ Decided: the IF project is over; `ifproject/` is archived in `prev/` and not reb
 ## Stage 2: Regenerate the site
 
 - [ ] Convert Shift_JIS and ISO-8859-1 text to UTF-8
-- [ ] Python generator in `lib/`, run in a virtual environment (add `.venv/` to `.gitignore`)
+- [x] Python generator in `lib/` (branch `generator`), run in a virtual environment (add `.venv/` to `.gitignore`)
 - [ ] Source format: Markdown or similar, holding English and Japanese side by side in one page (the site is bilingual within each page, not two monolingual versions)
-- [ ] Keep the existing minimalist look; make the layout responsive, the navigation consistent and the images larger
+- [x] Keep the existing minimalist look; make the layout responsive, the navigation consistent and the images larger
 - [x] `html/` (generated) is git-ignored; deploy from a fresh build
 
 ## New page: Re-Born obi tapestries
 
 Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko) is one new page added to the existing site and reached from its navigation (option b). English only. Typography is negotiable. On phones, sections stack in one column with tapestries in a two-column grid.
 
-- [ ] Get from Miki: the real titles for the tapestries, and full-resolution photographs of them and of the two catalogue covers
+- [x] Photographs and titles from Miki (in `src/art/`, titles from file names)
+- [ ] Title for Re-Born 2 no. 35; check title typos ("incence", "fawn spot check", spacing around brackets and commas)
+- [ ] Photo credit for the tapestries (the catalogue credits Hideto Ichige)
+- [ ] Confirm: catalogue numbers as captions; the sketch's BIO block left out (about me has it); the page wider than the old 977 px frame
 - [ ] Get Miki's and Yoko's approval of the shortened introduction (`plans/catalog-introduction.md`)
-- [ ] Decide the page's name, its navigation label (and Japanese label, to match the others), and whether the sketch's header biography and BIO section go on this page, the home page or "about me"
+- [x] Page named Tapestries / タペストリー; new biography moved to about me
+- [ ] Spelling: British throughout? ("jewelry" in the new biography vs "jewellery" elsewhere); home page still says "temporarily based in Sydney"
 - [ ] Contact: Yoko wants to show recent work to friends; a stranger should also be able to get in touch. A form is acceptable if it acknowledges a message immediately. Choose how to handle it.
+
+- [ ] Should Miki's full-resolution originals (`src/art/`) be in the public repo? Branch `generator` not pushed until decided.
 
 ## Stage 3: Deploy to `lambent.net`
 
