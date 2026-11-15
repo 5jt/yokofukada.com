@@ -21,6 +21,15 @@ Decided: the IF project is over; `ifproject/` is archived in `prev/` and not reb
 - [ ] Keep the existing minimalist look; make the layout responsive, the navigation consistent and the images larger
 - [x] `html/` (generated) is git-ignored; deploy from a fresh build
 
+## New page: Re-Born obi tapestries
+
+Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko) is one new page added to the existing site and reached from its navigation (option b). English only. Typography is negotiable. On phones, sections stack in one column with tapestries in a two-column grid.
+
+- [ ] Get from Miki: the real titles for the tapestries, and full-resolution photographs of them and of the two catalogue covers
+- [ ] Get Miki's and Yoko's approval of the shortened introduction (`plans/catalog-introduction.md`)
+- [ ] Decide the page's name, its navigation label (and Japanese label, to match the others), and whether the sketch's header biography and BIO section go on this page, the home page or "about me"
+- [ ] Contact: Yoko wants to show recent work to friends; a stranger should also be able to get in touch. A form is acceptable if it acknowledges a message immediately. Choose how to handle it.
+
 ## Stage 3: Deploy to `lambent.net`
 
 Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds the site and copies it to the droplet with `rsync`. Drafts are staged under `/var/www/lambenttechnology.com/wireframes/` on the droplet (proposed: `wireframes/yokofukada/`). No password protection. Stephen has SSH access and runs the script.
