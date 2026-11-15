@@ -34,7 +34,7 @@ Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko
 - [ ] Spelling: British throughout? ("jewelry" in the new biography vs "jewellery" elsewhere); home page still says "temporarily based in Sydney"
 - [ ] Contact: Yoko wants to show recent work to friends; a stranger should also be able to get in touch. A form is acceptable if it acknowledges a message immediately. Choose how to handle it.
 
-- [ ] Should Miki's full-resolution originals (`src/art/`) be in the public repo? Branch `generator` not pushed until decided.
+Decided (2026-11-15): Miki's full-resolution originals (`src/art/`) go in the public repo.
 
 ## Stage 3: Deploy to `lambent.net`
 
