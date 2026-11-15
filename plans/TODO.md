@@ -31,7 +31,9 @@ Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko
 - [ ] Confirm: catalogue numbers as captions; the sketch's BIO block left out (about me has it); the page wider than the old 977 px frame
 - [ ] Get Miki's and Yoko's approval of the shortened introduction (`plans/catalog-introduction.md`)
 - [x] Page named Tapestries / タペストリー; new biography moved to about me
-- [ ] Spelling: British throughout? ("jewelry" in the new biography vs "jewellery" elsewhere); home page still says "temporarily based in Sydney"
+- [ ] Spelling: British throughout? ("jewelry" in the new biography vs "jewellery" elsewhere)
+
+Decided (2026-11-15): the old home page was obsolete and is removed; the Tapestries page is the landing page (`index.html`). The header email address is a mailto link.
 Decided (2026-11-15): contact is by `yoko@yokofukada.com`, shown in plain text on every page and as a mailto button on Tapestries; no form, no obfuscation (20 years of exposure have caused no trouble).
 
 Decided (2026-11-15): Miki's full-resolution originals (`src/art/`) go in the public repo.

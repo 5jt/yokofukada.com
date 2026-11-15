@@ -141,7 +141,8 @@ def build(out):
             s["text"] = md((SRC / "text" / s["text"]).read_text(encoding="utf-8"))
         s["pieces"] = [dict(p, images=strips(p)) for p in s["pieces"]]
         sections.append(s)
-    render("tapestries.html", "tapestries", "tapestries",
+    # The landing page, so it is index.html; `section` keeps its styling.
+    render("tapestries.html", "index", "tapestries",
            title=tapestries["title"], spec=tapestries,
            covers=[image(c) for c in tapestries["covers"]],
            sections=sections)

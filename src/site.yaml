@@ -6,11 +6,11 @@ email: yoko@yokofukada.com
 copyright: © yoko fukada -2008
 keywords: art, australia, australian, cross bay gallery, exhibition, fukada, sydney
 
+# The Tapestries page is the landing page, so it is built as index.html.
 # Each entry: page (output file name without .html), English label, Japanese label.
 # `section` marks pages that light up this entry too (e.g. the individual works pages).
 nav:
-  - {page: index,     en: home,      ja: ホーム}
+  - {page: index,     en: tapestries, ja: タペストリー}
   - {page: works,     en: works,     ja: アート作品, section: work}
   - {page: jewellery, en: jewellery, ja: ジュエリー}
   - {page: aboutme,   en: about me,  ja: プロフィール}
-  - {page: tapestries, en: tapestries, ja: タペストリー}
