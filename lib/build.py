@@ -6,6 +6,7 @@ Every link the generator writes is relative, so the same build works at
 the domain root and in a staging subfolder.
 """
 
+from datetime import date
 from pathlib import Path
 
 import markdown
@@ -74,6 +75,7 @@ def collage_links(works):
 
 def build(out):
     site = load_yaml("site.yaml")
+    site["copyright"] = site["copyright"].format(year=date.today().year)
     works = load_yaml("works.yaml")
     jewellery = load_yaml("jewellery.yaml")
     tapestries = load_yaml("tapestries.yaml")

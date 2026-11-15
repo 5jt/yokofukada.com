@@ -3,7 +3,8 @@
 
 name: Yoko Fukada
 email: yoko@yokofukada.com
-copyright: © yoko fukada -2008
+# {year} becomes the year the site is built.
+copyright: "© Yoko Fukada 2006–{year}"
 keywords: Yoko Fukada, art, tapestry, tapestries, obi, maru-obi, hikinuki-obi, Re-Born, textile, jewellery
 
 # The Tapestries page is the landing page, so it is built as index.html.
