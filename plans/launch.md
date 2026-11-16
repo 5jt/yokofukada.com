@@ -64,6 +64,8 @@ SPF note: the `a` mechanism authorises whatever the A record points at to send m
 ## 2. Switch DNS
 
 6. At Fasthosts, change the A records for `@` and `www` to `134.122.97.96`. Touch nothing else. Stephen.
+
+   Fasthosts' *Automatic DNS Updates* is on. It leaves alone records that have been changed by hand (it flags them "manually changed"), so the two edited records should stay put. Check that they keep the new address, and **never click *Restore Default DNS Records***: it would point the site back at Fasthosts.
 7. Check that the authoritative servers have it, then public resolvers:
 
    ```sh
