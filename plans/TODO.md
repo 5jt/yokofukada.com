@@ -26,7 +26,7 @@ Decided: the IF project is over; `ifproject/` is archived in `prev/` and not reb
 Decided: Miki's sketch (`plans/Yoko Fukada.png`, made in Canva, approved by Yoko) is one new page added to the existing site and reached from its navigation (option b). English only. Typography is negotiable. On phones, sections stack in one column with tapestries in a two-column grid.
 
 - [x] Photographs and titles from Miki (in `src/art/`, titles from file names)
-- [ ] Title for Re-Born 2 no. 35 (Miki is asking Yoko)
+- [ ] Title for Re-Born 2 no. 35 (Miki is asking Yoko; Stephen to prompt her)
 - [x] Title typos fixed; titles in title case (parenthetical glosses left lower case); British spelling ("Vapour")
 - [x] Photo credit for the tapestries: "Photography by: Hideto Ichige" (Miki: no need to ask him)
 - [x] Confirmed by Miki: catalogue numbers as captions; the sketch's BIO block left out (about me has it); the page wider than the old 977 px frame
@@ -58,7 +58,8 @@ Decided (2026-11-16): production is on the droplet at `/var/www/yokofukada.com`,
 
 - [ ] Loop on style and content until Yoko is satisfied
 - [x] 2026-11-16, Yoko: jewellery before works in the navigation; former home-page image added to works as "Salad Garden with Pointy Hats" (とんがり帽子のサラダガーデン); works page now a thumbnail grid (the collage could not take a ninth work)
-- [ ] Photographer credit for Salad Garden (the old home page had none)
+- [x] 2026-11-16: works page reworked: one page, full-width grid, pop-ups (see Stage 5 decision); staging `5b532db`
+- [ ] Open questions sent to Miki (`Yoko site/for Miki/open-questions-2026.11.16.md`): no. 35 title; Salad Garden's Japanese title (とんがり帽子のサラダガーデン, or the old サラダ帽), capitals in works titles, position in the grid, photo credit (the old home page had none)
 
 ## Stage 5: DNS
 
