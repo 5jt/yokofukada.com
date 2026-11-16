@@ -52,6 +52,8 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 ## Stage 4: Revise with Yoko
 
 - [ ] Loop on style and content until Yoko is satisfied
+- [x] 2026-11-16, Yoko: jewellery before works in the navigation; former home-page image added to works as "Salad Garden with Pointy Hats" (とんがり帽子のサラダガーデン); works page now a thumbnail grid (the collage could not take a ninth work)
+- [ ] Photographer credit for Salad Garden (the old home page had none)
 
 ## Stage 5: DNS
 
@@ -64,7 +66,7 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share to `~/Projects/webhands` (the share kept losing access to folders); Miki supplies material through the Dropbox folder `Yoko site/`.
 
 - [x] Shared the Dropbox folder `Yoko site` with Miki; she is using it
-- [x] Questions for Miki (`Yoko site/for Miki/`): answered 2026-11-15 and folded in; questions 12 and 13 (for Yoko) still open below
+- [x] Questions for Miki (`Yoko site/for Miki/`): answered 2026-11-15 and 2026-11-16 and folded in. No. 18 "square fawn spot check designs" stays as it is; credit reads "mikiy.com" (apex domain)
 - [ ] Later: let Miki replace images and edit Markdown pages herself (e.g. GitHub's web editor on a branch, or a sync from her Dropbox folder)
 - [ ] Put the `webhands/` planning files (`plans/`, `progress/`, `CLAUDE.md`) under version control too?
 - [ ] Once the local copy has been in use for a while, archive or delete the copy on the share
@@ -74,6 +76,6 @@ Decided (2026-11-15): the working copy moved from the `mackenzie-shared` share t
 - [x] Typos in `plans/inventory.md` fixed (Miki approved; "Yamanouchi", "Camden Recycling Centre (London)")
 Decided (2026-11-15): the copyright line reads "© Yoko Fukada 2006–{year}", the year being when the site is built.
 
-- [ ] Which extra pages does Yoko want, and with what content? (Not yet known.)
-- [ ] Do higher-resolution originals of the images exist? If not, use what we recover from the old site.
+- [x] Extra pages: none for now (2026-11-16)
+- [ ] Higher-resolution originals: Miki may have some in her archive; searching will take time. Use the recovered images meanwhile (2026-11-16)
 - [ ] `yoko@yokofukada.com` stays in use (decided 2026-11-15). Is the mailbox part of the Fasthosts hosting package? If so, the package stays, or the mailbox moves elsewhere before it is cancelled.
