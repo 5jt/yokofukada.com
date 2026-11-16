@@ -12,6 +12,6 @@ keywords: Yoko Fukada, art, tapestry, tapestries, obi, maru-obi, hikinuki-obi, R
 # `section` marks pages that light up this entry too (e.g. the individual works pages).
 nav:
   - {page: index,     en: tapestries, ja: タペストリー}
-  - {page: works,     en: works,     ja: アート作品, section: work}
   - {page: jewellery, en: jewellery, ja: ジュエリー}
+  - {page: works,     en: works,     ja: アート作品, section: work}
   - {page: aboutme,   en: about me,  ja: プロフィール}

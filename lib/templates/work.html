@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% from "macros.html" import figure, collage_nav %}
+{% from "macros.html" import figure, works_grid %}
 {% block main %}
 <div class="work">
   <div class="pictures{% if work.images | length > 1 %} pair{% endif %}">
   {% for img in work.images %}{{ figure(img) }}{% endfor %}
   </div>
-  {{ collage_nav(collage, current=work.page, cls="small") }}
+  {{ works_grid(grid, current=work.page, cls="small") }}
   {% if work.credit is defined %}<p class="credit">{{ work.credit }}</p>{% endif %}
 </div>
 {% endblock %}

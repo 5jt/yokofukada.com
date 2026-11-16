@@ -132,36 +132,50 @@ figcaption [lang="ja"] { font-size: 8px; }
 /* About me */
 .page-aboutme main { padding-top: 140px; }
 
-/* Works: the collage, as a menu
+/* Works: a grid of thumbnails, as a menu
    -------------------------------------------------------------------- */
 
-.collage {
-  position: relative;
-  max-width: 444px;
+.works-grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.collage a {
-  position: absolute;
+.works-grid a { display: block; color: inherit; text-decoration: none; }
+
+.works-grid .thumb {         /* every thumbnail in the same 4:3 box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+}
+
+.works-grid img {
   display: block;
-}
-
-.collage a span {          /* visible to screen readers only */
-  position: absolute;
-  width: 1px; height: 1px;
-  overflow: hidden;
-  clip-path: inset(50%);
-}
-
-.collage a:hover,
-.collage a:focus-visible,
-.collage a[aria-current] {
-  outline: 2px solid var(--green);
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  outline: 2px solid transparent;
   outline-offset: 1px;
 }
 
-.page-works main { padding-top: 112px; padding-left: 160px; }
+.works-grid a:hover img,
+.works-grid a:focus-visible img,
+.works-grid a[aria-current] img { outline-color: var(--green); }
 
-.collage.small { max-width: 249px; }
+.works-grid .caption { display: block; margin-top: 8px; font-size: 12px; line-height: 1.5; }
+.works-grid .caption [lang="ja"] { font-size: 11px; }
+.works-grid a:hover .caption { color: var(--green); }
+
+.page-works main { padding-top: 112px; padding-left: 40px; }
+.works-grid.big { max-width: 700px; }
+.works-grid.big ul { gap: 36px 28px; }
+
+.works-grid.small { max-width: 249px; }
+.works-grid.small ul { gap: 8px; }
 
 /* A single work */
 .page-work main { padding: 112px 40px 40px 26px; }
@@ -178,7 +192,7 @@ figcaption [lang="ja"] { font-size: 8px; }
 
 .work .pictures { grid-area: pictures; justify-self: center; align-self: start; }
 .work .pictures.pair { display: flex; gap: 20px; align-items: flex-start; }
-.work .collage { grid-area: menu; margin-top: 220px; }
+.work .works-grid { grid-area: menu; margin-top: 220px; }
 .work .credit { grid-area: credit; text-align: right; margin: 3em 0 0; }
 
 /* Jewellery: thumbnails and lightbox
@@ -366,7 +380,8 @@ figcaption [lang="ja"] { font-size: 8px; }
     grid-template-areas: "pictures" "credit" "menu";
   }
   .work .pictures.pair { flex-direction: column; }
-  .work .collage { margin-top: 32px; }
+  .work .works-grid { margin-top: 32px; }
+  .works-grid.big ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; }
   .work .credit { text-align: left; margin-top: 1em; }
 
   .gallery { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }

@@ -57,20 +57,10 @@ def image(spec):
     return spec
 
 
-def collage_links(works):
-    """Percent-positioned link rectangles over the works collage."""
-    cw, ch = size(works["collage"])
-    links = []
-    for w in works["works"]:
-        left, top, right, bottom = w["area"]
-        links.append({
-            "page": w["page"],
-            "title": w["title"],
-            "style": (f"left:{100 * left / cw:.2f}%;top:{100 * top / ch:.2f}%;"
-                      f"width:{100 * (right - left) / cw:.2f}%;"
-                      f"height:{100 * (bottom - top) / ch:.2f}%"),
-        })
-    return {"file": works["collage"], "width": cw, "height": ch, "links": links}
+def works_grid(works):
+    """One entry per work for the thumbnail grid: its page and first image."""
+    return [{"page": w["page"], "title": w["title"], "image": image(w["images"][0])}
+            for w in works["works"]]
 
 
 def build(out):
@@ -114,12 +104,12 @@ def build(out):
         render("page.html", path.stem, path.stem, title=meta["title"], meta=meta, body=body)
 
     # Works
-    collage = collage_links(works)
-    render("works.html", "works", "works", title="works", collage=collage)
+    grid = works_grid(works)
+    render("works.html", "works", "works", title="works", grid=grid)
     for w in works["works"]:
         w = dict(w, images=[image(i) for i in w["images"]])
         render("work.html", w["page"], "work", title="works",
-               work=w, collage=collage)
+               work=w, grid=grid)
 
     # Jewellery
     render("jewellery.html", "jewellery", "jewellery",
