@@ -22,7 +22,7 @@ SPF note: the `a` mechanism authorises whatever the A record points at to send m
 
 ## 1. Prepare (any time before the DNS change)
 
-1. **Lower the TTL** of the two A records (`@`, `www`) from 3600 to 300 at Fasthosts, at least an hour before step 3, so the switch (and any rollback) takes effect quickly. Stephen.
+1. **TTL: nothing to do.** Fasthosts' DNS editor has no TTL field; every record has a fixed TTL of 3600 s. So resolvers may keep the old address for up to an hour after the switch, and the same goes for a rollback (checked 2026-11-16).
 2. **Site folder** on the droplet. Jack:
 
    ```sh
@@ -72,7 +72,7 @@ SPF note: the `a` mechanism authorises whatever the A record points at to send m
    dig +short yokofukada.com @1.1.1.1
    ```
 
-   Let's Encrypt asks the authoritative servers, so certbot can run as soon as `ns1–3` answer with the new address. Visitors follow as the old TTL runs out.
+   Let's Encrypt asks the authoritative servers, so certbot can run as soon as `ns1–3` answer with the new address. Visitors follow within the hour, as the old TTL runs out.
 
 ## 3. HTTPS
 
@@ -98,12 +98,11 @@ Between steps 6 and 8, `https://yokofukada.com` reaches the droplet's default ce
 10. From the Mac: `http://` → `https://`; `www` → apex; every page and image 200; `/jewellery.php` → `/jewellery.html`; `/works01.html` … `/works08.html` → `/works.html`; `version.txt` shows the published commit; a certificate for both names. Screenshots at desktop and phone width.
 11. Send a test email to and from `yoko@yokofukada.com` (it should be unaffected).
 12. Push the `published-YYYY-MM-DD` tag that `lib/publish` made.
-13. Put the TTLs back to 3600 after a few days.
-14. Watch the Nginx 404 log for a couple of weeks for old addresses we missed.
+13. Watch the Nginx 404 log for a couple of weeks for old addresses we missed.
 
 ## Rollback
 
-Point the two A records back to 88.208.252.228. The old site on Fasthosts is untouched (and saved in `prev/ftp/htdocs/`). With TTL 300, the rollback takes effect within minutes.
+Point the two A records back to 88.208.252.228. The old site on Fasthosts is untouched (and saved in `prev/ftp/htdocs/`). With the fixed TTL of 3600, the rollback takes up to an hour to reach everyone.
 
 ## Afterwards
 

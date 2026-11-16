@@ -50,7 +50,7 @@ Decided (2026-11-16): production is on the droplet at `/var/www/yokofukada.com`,
 
 - [x] Production path `/var/www/yokofukada.com`; `lib/publish production` targets it
 - [x] 2026-11-16: staging published (`a25ad43`): works grid, Salad Garden, new menu order
-- [ ] Lower the A-record TTLs to 300 at Fasthosts (Stephen)
+- [x] A-record TTLs: Fasthosts fixes them at 3600 s and has no setting for them; nothing to do
 - [ ] Site folder and HTTP-only Nginx conf on the droplet (Jack); first production publish; test with `curl --resolve`
 - [ ] HTTPS with `certbot --nginx` once the DNS change has landed (Jack); `www` → apex
 
