@@ -14,6 +14,7 @@
 # Set PUBLISH_HOST to the SSH login for the droplet (default: stephen@lambent.net).
 # staging (the default) publishes to
 #   https://lambenttechnology.com/wireframes/yokofukada/
+# production publishes to /var/www/yokofukada.com/ (see plans/launch.md)
 set -eu
 
 cd "$(dirname "$0")/.."
@@ -25,7 +26,7 @@ target=${1:-staging}
 host=${PUBLISH_HOST:-stephen@lambent.net}
 case $target in
   staging)    dest=/var/www/lambenttechnology.com/wireframes/yokofukada/ ;;
-  production) echo "production path not yet set up" >&2; exit 1 ;;
+  production) dest=/var/www/yokofukada.com/ ;;
   *)          echo "usage: $0 [--go] [staging|production]" >&2; exit 2 ;;
 esac
 

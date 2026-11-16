@@ -46,8 +46,13 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 - [x] Generator writes relative links only, so the same build works under `wireframes/yokofukada/` and at the domain root
 - [x] Publish script `lib/publish` (dry run by default; `--go` to publish; logs in as `stephen@lambent.net`; staging only so far)
 - [x] First publish to staging (2026-11-15): https://lambenttechnology.com/wireframes/yokofukada/
-- [ ] Confirm the production path for `yokofukada.com`
-- [ ] Production site configuration and HTTPS for `yokofukada.com` (Jack, once)
+Decided (2026-11-16): production is on the droplet at `/var/www/yokofukada.com`, not on Fasthosts (its SSL certificate costs £37.45 a year; Let's Encrypt is free). Email stays at Fasthosts. Step by step: `plans/launch.md`.
+
+- [x] Production path `/var/www/yokofukada.com`; `lib/publish production` targets it
+- [x] 2026-11-16: staging published (`a25ad43`): works grid, Salad Garden, new menu order
+- [ ] Lower the A-record TTLs to 300 at Fasthosts (Stephen)
+- [ ] Site folder and HTTP-only Nginx conf on the droplet (Jack); first production publish; test with `curl --resolve`
+- [ ] HTTPS with `certbot --nginx` once the DNS change has landed (Jack); `www` → apex
 
 ## Stage 4: Revise with Yoko
 
@@ -57,9 +62,9 @@ Decided: no CI/CD and no GitHub Actions. A publish script in this repo rebuilds 
 
 ## Stage 5: DNS
 
-- [ ] Redirect `jewellery.php` to the new jewellery page (all other page names are kept)
-- [ ] Point the `yokofukada.com` and `www.yokofukada.com` A records at the droplet
-- [ ] Keep the MX records at Fasthosts while `yoko@yokofukada.com` may be in use
+- [ ] Redirect `jewellery.php` and `jw.php` to the new jewellery page, `ifproject/` to the home page (in the Nginx conf; all other page names are kept)
+- [ ] Point the `yokofukada.com` and `www.yokofukada.com` A records at the droplet (134.122.97.96)
+- [x] Keep the MX, `mail` and `webmail` records at Fasthosts: Yoko keeps `yoko@yokofukada.com` (decided 2026-11-16)
 
 ## Collaboration
 
@@ -78,4 +83,4 @@ Decided (2026-11-15): the copyright line reads "© Yoko Fukada 2006–{year}", t
 
 - [x] Extra pages: none for now (2026-11-16)
 - [ ] Higher-resolution originals: Miki may have some in her archive; searching will take time. Use the recovered images meanwhile (2026-11-16)
-- [ ] `yoko@yokofukada.com` stays in use (decided 2026-11-15). Is the mailbox part of the Fasthosts hosting package? If so, the package stays, or the mailbox moves elsewhere before it is cancelled.
+- [x] `yoko@yokofukada.com` stays in use, and with it the Fasthosts hosting package (decided 2026-11-16)

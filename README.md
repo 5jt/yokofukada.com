@@ -7,7 +7,7 @@ The site was originally built two decades ago using a tool like FrontPage, then 
 
 The website is badly out of date, with inconsistent navigation controls and no adaptation to mobile devices. Its images are too small to adapt to the current range of display devices.
 
-The domain is registered in our Fasthosts account and also currently hosted there: see `Fasthosts Control Panel.pdf`.
+The domain is registered in our Fasthosts account and also currently hosted there: see `Fasthosts Control Panel.pdf`. The website moves to the droplet; email (`yoko@yokofukada.com`) stays at Fasthosts, so the hosting package stays too. See `plans/launch.md`.
 
 
 
@@ -35,7 +35,7 @@ Stages:
 
 We foresee each year a few requests to add new content.
 
-If Yoko does not use her `yoko@yokofukada.com` email address, the Fasthosts hosting package can be removed and only the DNS registration left there.
+Decided (2026-11-16): Yoko keeps her `yoko@yokofukada.com` address, so the Fasthosts hosting package stays. The website still moves to the droplet: an SSL certificate at Fasthosts costs £37.45 a year, while Let's Encrypt on the droplet is free. Only the A records change; the MX and mail records stay at Fasthosts. Launch plan: `plans/launch.md`.
 
 
 Where things live
@@ -76,6 +76,7 @@ Content lives in `src/`: `site.yaml` (navigation), `works.yaml`, `jewellery.yaml
 	.venv/bin/python lib/build.py        # build into html/
 	lib/publish                          # build, then show what rsync would change
 	lib/publish --go                     # build and publish to staging (needs a clean working tree)
+	lib/publish --go production          # build and publish to /var/www/yokofukada.com/ on the droplet
 	lib/shot URL out.png [WIDTH HEIGHT]  # screenshot a page with headless Firefox
 
 Staging: https://lambenttechnology.com/wireframes/yokofukada/
