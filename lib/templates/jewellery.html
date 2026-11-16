@@ -1,17 +1,13 @@
 {% extends "base.html" %}
+{% from "macros.html" import lightbox %}
 {% block main %}
 <h1>{{ gallery.title }}</h1>
-<ul class="gallery">
+<ul class="jewellery gallery">
 {% for img in images %}
   <li><a href="images/{{ img.file }}"><img src="images/{{ img.file }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ gallery.alt }}"></a></li>
 {% endfor %}
 </ul>
 <p class="credit">{{ gallery.credit }}</p>
-<dialog class="lightbox" aria-label="{{ gallery.title }}">
-  <img alt="{{ gallery.alt }}">
-  <button class="prev" aria-label="previous">&laquo; prev</button>
-  <button class="next" aria-label="next">next &raquo;</button>
-  <button class="close" aria-label="close">close</button>
-</dialog>
+{{ lightbox(gallery.title) }}
 {% endblock %}
-{% block scripts %}<script src="js/lightbox.js"></script>{% endblock %}
+{% block scripts %}<script src="js/lightbox.js?v={{ v.lightbox }}"></script>{% endblock %}

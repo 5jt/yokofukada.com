@@ -62,7 +62,8 @@ Decided (2026-11-16): production is on the droplet at `/var/www/yokofukada.com`,
 
 ## Stage 5: DNS
 
-- [ ] Redirect `jewellery.php` and `jw.php` to the new jewellery page, `ifproject/` to the home page (in the Nginx conf; all other page names are kept)
+- [ ] Redirect `jewellery.php` and `jw.php` to the new jewellery page, `works01.html`–`works08.html` to `works.html`, `ifproject/` to the home page (in the Nginx conf, `plans/launch.md`; all other page names are kept)
+Decided (2026-11-16): the works are one page, a grid of thumbnails (3, 2, then 1 column as the window narrows) opening pop-ups; no page per work. Camden is one tile, its pop-up showing both pictures. Miki's credit is in the pop-ups of works 1–4. Works and jewellery pop-ups close on any click or Esc; arrow keys step. CSS and JS URLs carry a content hash (`?v=…`) so browsers never mix old and new files.
 - [ ] Point the `yokofukada.com` and `www.yokofukada.com` A records at the droplet (134.122.97.96)
 - [x] Keep the MX, `mail` and `webmail` records at Fasthosts: Yoko keeps `yoko@yokofukada.com` (decided 2026-11-16)
 

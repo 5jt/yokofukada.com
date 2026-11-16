@@ -1,5 +1,29 @@
 {% extends "base.html" %}
-{% from "macros.html" import works_grid %}
+{% from "macros.html" import figure, lightbox %}
 {% block main %}
-{{ works_grid(grid, cls="big") }}
+<h1 class="hidden">works</h1>
+<ul class="works gallery">
+{% for w in works %}
+  {% set first = w.images[0] %}
+  <li>
+    <a href="images/{{ first.file }}">
+      <span class="thumb"><img src="images/{{ first.file }}" width="{{ first.width }}" height="{{ first.height }}" alt="{{ first.en }}"></span>
+      <span class="caption">{{ w.title }}{% if first.ja is defined %}<br><span lang="ja">{{ first.ja }}</span>{% endif %}</span>
+    </a>
+    <template>
+      <div class="pictures{% if w.images | length > 1 %} pair{% endif %}">
+      {% for img in w.images %}
+        <figure style="--w:{{ img.width }}px;--r:{{ '%.4f' % (img.width / img.height) }}">
+          <img src="images/{{ img.file }}" width="{{ img.width }}" height="{{ img.height }}" alt="{{ img.en }}">
+          <figcaption>{{ img.en }}{% if img.ja is defined %}<br><span lang="ja">{{ img.ja }}</span>{% endif %}</figcaption>
+        </figure>
+      {% endfor %}
+      </div>
+      {% if w.credit is defined %}<p class="credit">{{ w.credit }}</p>{% endif %}
+    </template>
+  </li>
+{% endfor %}
+</ul>
+{{ lightbox("works") }}
 {% endblock %}
+{% block scripts %}<script src="js/lightbox.js?v={{ v.lightbox }}"></script>{% endblock %}

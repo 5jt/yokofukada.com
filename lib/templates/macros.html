@@ -5,15 +5,7 @@
 </figure>
 {% endmacro %}
 
-{% macro works_grid(grid, current="", cls="") %}
-<nav class="works-grid {{ cls }}" aria-label="works">
-  <ul>
-  {% for w in grid %}
-    <li><a href="{{ w.page }}.html"{% if w.page == current %} aria-current="page"{% endif %}>
-      <span class="thumb"><img src="images/{{ w.image.file }}" width="{{ w.image.width }}" height="{{ w.image.height }}" alt="{{ w.title }}"></span>
-      {% if cls == "big" %}<span class="caption">{{ w.image.en }}{% if w.image.ja is defined %}<br><span lang="ja">{{ w.image.ja }}</span>{% endif %}</span>{% endif %}
-    </a></li>
-  {% endfor %}
-  </ul>
-</nav>
+{% macro lightbox(label) %}
+{# Filled by js/lightbox.js; any click, or Esc, closes it. #}
+<dialog class="lightbox" aria-label="{{ label }}"><div class="content"></div></dialog>
 {% endmacro %}

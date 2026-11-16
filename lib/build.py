@@ -6,6 +6,7 @@ Every link the generator writes is relative, so the same build works at
 the domain root and in a staging subfolder.
 """
 
+import hashlib
 from datetime import date
 from pathlib import Path
 
@@ -57,10 +58,10 @@ def image(spec):
     return spec
 
 
-def works_grid(works):
-    """One entry per work for the thumbnail grid: its page and first image."""
-    return [{"page": w["page"], "title": w["title"], "image": image(w["images"][0])}
-            for w in works["works"]]
+def stamp(path):
+    """Short content hash of a file in src/, appended to its URL (?v=…) so
+    that browsers fetch it afresh whenever it changes."""
+    return hashlib.sha1((SRC / path).read_bytes()).hexdigest()[:8]
 
 
 def build(out):
@@ -74,6 +75,7 @@ def build(out):
                       undefined=StrictUndefined, autoescape=True,
                       trim_blocks=True, lstrip_blocks=True)
 
+    v = {"css": stamp("css/site.css"), "lightbox": stamp("js/lightbox.js")}
     written = set()
 
     def write(path, data):
@@ -92,7 +94,7 @@ def build(out):
 
     def render(template, page, section, **context):
         html = env.get_template(template).render(
-            site=site, current=page, section=section, **context)
+            site=site, current=page, section=section, v=v, **context)
         write(f"{page}.html", html.encode("utf-8"))
         print(f"  {page}.html")
 
@@ -104,12 +106,9 @@ def build(out):
         render("page.html", path.stem, path.stem, title=meta["title"], meta=meta, body=body)
 
     # Works
-    grid = works_grid(works)
-    render("works.html", "works", "works", title="works", grid=grid)
-    for w in works["works"]:
-        w = dict(w, images=[image(i) for i in w["images"]])
-        render("work.html", w["page"], "work", title="works",
-               work=w, grid=grid)
+    grid = [dict(w, images=[image(i) for i in w["images"]])
+            for w in works["works"]]
+    render("works.html", "works", "works", title="works", works=grid)
 
     # Jewellery
     render("jewellery.html", "jewellery", "jewellery",

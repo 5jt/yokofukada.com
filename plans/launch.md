@@ -44,6 +44,7 @@ SPF note: the `a` mechanism authorises whatever the A record points at to send m
        # Old addresses
        location = /jewellery.php { return 301 /jewellery.html; }
        location = /jw.php        { return 301 /jewellery.html; }
+       location ~ ^/works0[1-8]\.html$ { return 301 /works.html; }   # one page per work until 2026
        location ^~ /ifproject/   { return 301 /; }
 
        location / { try_files $uri $uri/ =404; }
@@ -56,6 +57,7 @@ SPF note: the `a` mechanism authorises whatever the A record points at to send m
    ```sh
    curl -sI --resolve yokofukada.com:80:134.122.97.96 http://yokofukada.com/
    curl -sI --resolve yokofukada.com:80:134.122.97.96 http://yokofukada.com/jewellery.php   # 301
+   curl -sI --resolve yokofukada.com:80:134.122.97.96 http://yokofukada.com/works03.html    # 301 to works.html
    curl -s  --resolve yokofukada.com:80:134.122.97.96 http://yokofukada.com/version.txt
    ```
 
@@ -93,7 +95,7 @@ Between steps 6 and 8, `https://yokofukada.com` reaches the droplet's default ce
 
 ## 4. Check
 
-10. From the Mac: `http://` → `https://`; `www` → apex; every page and image 200; `/jewellery.php` → `/jewellery.html`; `version.txt` shows the published commit; a certificate for both names. Screenshots at desktop and phone width.
+10. From the Mac: `http://` → `https://`; `www` → apex; every page and image 200; `/jewellery.php` → `/jewellery.html`; `/works01.html` … `/works08.html` → `/works.html`; `version.txt` shows the published commit; a certificate for both names. Screenshots at desktop and phone width.
 11. Send a test email to and from `yoko@yokofukada.com` (it should be unaffected).
 12. Push the `published-YYYY-MM-DD` tag that `lib/publish` made.
 13. Put the TTLs back to 3600 after a few days.
